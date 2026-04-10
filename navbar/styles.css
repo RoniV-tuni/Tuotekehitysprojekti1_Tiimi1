@@ -9,7 +9,7 @@ a {
 .navbar {
     display: flex;          
     width: 100%;            
-    background-color: var(--taustavari);
+    background-color: #fff; /*tausta ehkä valkoseks että korostuu violetti?*/
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
 }
@@ -20,13 +20,13 @@ a {
     flex-direction: column; 
     align-items: center;
     justify-content: center;
-    padding: 15px 0;
+    padding: 8px 0; /* pienennetty paddingia 15->8 */
     text-decoration: none;
     color: var(--tekstivari);
     border-right: 1px solid #000; /* pystyviiva */
     font-family: 'Playfair Display', serif; /* fontti */
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px; /* pienee fontti 12->11 */
     letter-spacing: 1px;
     transition: 0.3s;
 }
@@ -36,20 +36,20 @@ a {
     border-right: none;
 }
 
-/* Aktiivi tila (musta blokki) */
+/* Aktiivi tila (violetti blokki) */
 .nav-item.active {
-    background-color: #1A1A1A;
-    color: #FDF2F0;
+    background-color: var(--asiakas-violetti);
+    color: #000;
 }
 
 .nav-item .icon {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 16px; /* 18->16 */
+    margin-bottom: 3px; /* 5->3 */
 }
 
 /* Hover-efekti hiirelle tummempi väri */
 .nav-item:hover:not(.active) {
-    background-color: #f5e1de;
+    background-color: var(--hover-vari);
     letter-spacing: 2px;
 }
 /* Klikkausefekti */
@@ -65,6 +65,9 @@ a {
   --taustavari: #FDF2F0;
   --tekstivari: #1A1A1A;
   --korostus: #FFC0CB;
+  --asiakas-violetti: #D4B9F0; /* Valitun kohdan väri */
+  --asiakas-pinkki: #F274D1;   /* pinkki värikoodi */
+  --hover-vari: #f5e1de;
 }
 
 body {
