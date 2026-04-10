@@ -1,0 +1,112 @@
+a {
+    text-decoration: none; 
+    color: inherit;        
+}
+
+
+/*  ############### NAVBAR ############## */
+
+.navbar {
+    display: flex;          
+    width: 100%;            
+    background-color: var(--taustavari);
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.nav-item {
+    flex: 1;                /* jokaine lohko yhtä leveä */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    text-decoration: none;
+    color: var(--tekstivari);
+    border-right: 1px solid #000; /* pystyviiva */
+    font-family: 'Playfair Display', serif; /* fontti */
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+
+.nav-item:last-child {
+    border-right: none;
+}
+
+/* Aktiivi tila (musta blokki) */
+.nav-item.active {
+    background-color: #1A1A1A;
+    color: #FDF2F0;
+}
+
+.nav-item .icon {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Hover-efekti hiirelle tummempi väri */
+.nav-item:hover:not(.active) {
+    background-color: #f5e1de;
+    letter-spacing: 2px;
+}
+/* Klikkausefekti */
+.nav-item:active {
+    transform: scale(0.98);    
+}
+
+/* --- YLEISET --- */
+:root {
+  --taustavari: #FDF2F0;
+  --tekstivari: #1A1A1A;
+  --korostus: #FFC0CB;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Perusfontti */
+  background-color: var(--taustavari);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif; /* Otsikkofontti */
+}
+
+
+
+/* --- 2. PALVELU-OSIOT (Checkerboard-look) --- */
+.service-row {
+  display: flex;
+  min-height: 500px;
+}
+
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.service-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.outline-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: 1px solid var(--korostus);
+  text-decoration: none;
+  color: var(--tekstivari);
+}
