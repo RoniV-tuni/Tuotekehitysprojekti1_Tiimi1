@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif; /* Perusfontti */
+    background-color: var(--taustavari);
+    padding-top: 50px;
+}
+
+header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;        
+}
+
+
+/*  ############### NAVBAR ############## */
+
+.navbar {
+    display: flex;          
+    width: 100%;            
+    background-color: #fff; /*tausta ehkä valkoseks että korostuu violetti?*/
+    border-bottom: 1px solid #0000003b;
+}
+
+.nav-item {
+    flex: 1;                /* jokaine lohko yhtä leveä */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0; /* pienennetty paddingia 15->8 */
+    text-decoration: none;
+    color: var(--tekstivari);
+    border-right: 1px solid #0000003b; /* pystyviiva */
+    font-family: 'Playfair Display', serif; /* fontti */
+    text-transform: uppercase;
+    font-size: 11px; /* pienee fontti 12->11 */
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-item:last-child {
+    border-right: none;
+}
+
+/* Aktiivi tila (violetti blokki) */
+.nav-item.active {
+    background-color: #d4b9f0e1;
+    color: #000;
+}
+
+.nav-item .icon {
+    font-size: 16px; /* 18->16 */
+    margin-bottom: 3px; /* 5->3 */
+}
+
+/* Hover-efekti hiirelle tummempi väri */
+.nav-item:hover:not(.active) {
+    background-color: var(--hover-vari);
+    letter-spacing: 2px;
+}
+/* Klikkausefekti */
+.nav-item:active {
+    transform: scale(0.98);    
+}
+
+/* ############ NAVBARIN CSS PÄÄTTYY */
+
+
+/* --- YLEISET --- */
+:root {
+  --taustavari: #FDF2F0;
+  --tekstivari: #1A1A1A;
+  --korostus: #FFC0CB;
+  --asiakas-violetti: #D4B9F0; /* Valitun kohdan väri */
+  --asiakas-pinkki: #F274D1;   /* pinkki värikoodi */
+  --hover-vari: #f5e1de;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr min(35rem, 100%) 1fr;
+    justify-items: center;
+}
+
+.hero {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background-color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    min-height: 30rem;
+}
+
+.hero_kuva {
+    width: 40%;
+}
+
+.hero_kuva img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 95%);
+    mask-image: linear-gradient(to right, black 70%, transparent 95%);
+}
+
+.hero_teksti {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.cta_nappi {
+    position: relative;
+    display: inline-block;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: rgb(38, 40, 41);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--hover-vari);
+    background: transparent;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    z-index: 1;
+    margin-top: 30px;
+    margin-left: 10px;
+    max-width: 100%;     
+    text-align: center;    
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+}
+
+.cta_nappi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;  
+    width: 100%;
+    height: 100%;
+    background-color: var(--hover-vari);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.cta_nappi:hover {
+    color: rgb(38, 40, 41);
+}
+
+.cta_nappi:hover::before {
+    left: 0;
+}
+
+.h1_hero {
+    font-family: "Story Script", sans-serif;
+    padding: 1rem;
+    font-size: 2.8rem;
+    color: #D4B9F0;
+}
+
+.p_hero {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+}
+
+.sisalto_kehys {
+    grid-column: 2;
+    padding: 2rem 1.3rem;
+}
+
+.ristikko {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    min-height: 100vh;
+}
+
+.ristikko_kuva {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.ristikko_kuva img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ristikko_teksti {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;
+    background-color: white;
+    color: rgb(38, 40, 41);
+    padding: 2rem;
+    gap: 1rem;
+    height: auto;
+    min-height: 200px;
+    margin-bottom: 3rem;
+}
+
+.ristikko_teksti:last-child {
+    margin-bottom: 0;
+}
+
+.luelisaa_nappi {
+    position: relative;
+    display: inline-block;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: rgb(38, 40, 41);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #d4b9f0e1;
+    background: transparent;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    z-index: 1;
+    margin-top: 30px;
+    margin-left: 10px;
+    max-width: 100%;     
+    text-align: center;    
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+}
+
+.luelisaa_nappi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;  
+    width: 100%;
+    height: 100%;
+    background-color: #d4b9f0e1;
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.luelisaa_nappi:hover {
+    color: #fff;
+}
+
+.luelisaa_nappi:hover::before {
+    left: 0;
+}
+
+.h2_ristikko {
+    font-family: "Story Script", sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.p_ristikko {
+    font-family: "Inter", sans-serif;
+    line-height: 1.8rem;
+}
+
+/*footer {
+    grid-area: footer;
+}*/
+
+@media (min-width: 750px) {
+
+    main {
+        grid-template-columns: 1fr min(70rem, 100%) 1fr;
+    }
+
+    .ristikko {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(500px, auto);
+    }
+
+    .ristikko_kuva {
+        height: auto;
+    }
+
+    .ristikko_teksti {
+        height: 100%;
+        margin-bottom: 0;
+    }
+
+    .ristikko div:nth-child(1) { order: 2; } 
+    .ristikko div:nth-child(2) { order: 1; }
+
+    .ristikko div:nth-child(3) { order: 3; } 
+    .ristikko div:nth-child(4) { order: 4; }
+
+    .ristikko div:nth-child(5) { order: 6; }
+    .ristikko div:nth-child(6) { order: 5; }
+}
+
+@media (min-width: 1150px) {
+
+    .ristikko {
+        grid-auto-rows: minmax(600px, auto);
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .hero {
+        width: 90%;
+        border-radius: 0.8rem;
+    }
+
+    .hero_kuva img {
+        border-radius: 0.8rem;
+    }
+}
