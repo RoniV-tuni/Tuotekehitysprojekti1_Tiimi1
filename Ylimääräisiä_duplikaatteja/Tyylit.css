@@ -4,14 +4,114 @@
     box-sizing: border-box;
 }
 
+:root {
+  --taustavari: #FDF2F0;
+  --tekstivari: #1A1A1A;
+  --korostus: #FFC0CB;
+  --asiakas-violetti: #D4B9F0; /* Valitun kohdan väri */
+  --asiakas-pinkki: #F274D1;   /* pinkki värikoodi */
+  --hover-vari: #f5e1de;
+}
+
 body {
-    background-color: white;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Perusfontti */
+  background-color: var(--taustavari);
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr min(35rem, 100%) 1fr;    
 }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif; /* Otsikkofontti */
+}
+
+/*  ############### NAVBAR ############## */
+
+.navbar {
+    display: flex;          
+    width: 100%;            
+    background-color: #fff; /*tausta ehkä valkoseks että korostuu violetti?*/
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.nav-item {
+    flex: 1;                /* jokaine lohko yhtä leveä */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0; /* pienennetty paddingia 15->8 */
+    text-decoration: none;
+    color: var(--tekstivari);
+    border-right: 1px solid #000; /* pystyviiva */
+    font-family: 'Playfair Display', serif; /* fontti */
+    text-transform: uppercase;
+    font-size: 11px; /* pienee fontti 12->11 */
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+
+.nav-item:last-child {
+    border-right: none;
+}
+
+/* Aktiivi tila (violetti blokki) */
+.nav-item.active {
+    background-color: var(--asiakas-violetti);
+    color: #000;
+}
+
+.nav-item .icon {
+    font-size: 16px; /* 18->16 */
+    margin-bottom: 3px; /* 5->3 */
+}
+
+/* Hover-efekti hiirelle tummempi väri */
+.nav-item:hover:not(.active) {
+    background-color: var(--hover-vari);
+    letter-spacing: 2px;
+}
+/* Klikkausefekti */
+.nav-item:active {
+    transform: scale(0.98);    
+}
+
+/* ############ NAVBARIN CSS PÄÄTTYY */
+
+/* Hero osan CSS*/
+.hero {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.hero_kuva {
+    width: 40%;
+}
+
+.hero_kuva img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 95%);
+    mask-image: linear-gradient(to right, black 70%, transparent 95%);
+}
+
+.hero_teksti {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+}
+
+/* Hero osan CSS Päättyy*/
 
 .sisalto_kehys {
     grid-column: 2;
