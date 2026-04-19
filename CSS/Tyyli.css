@@ -291,11 +291,13 @@ main {
 /* Galleria päättyy */
 
 /* Verkkokauppa alkaa */
-.verkkokauppa_alue{
-    grid-column: 2;
-    padding: 2rem 1.3rem;
 
+.verkkokauppa_kortit {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
 }
+
 .verkkokauppa_kortti{
     display: flex;
     flex-direction: column;
@@ -309,8 +311,8 @@ main {
     flex-direction: row;
 }
 .verkkokauppa_kuva{
-    width: 90%;
-    height: 90%;
+    width: 45%;
+    height: 100%;
     border-radius: 12px;
 }
 .verkkokauppa_jakoviiva{
@@ -428,6 +430,10 @@ footer {
     .ristikko div:nth-child(6) { order: 5; }
 
     .galleria_kortit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .verkkokauppa_kortit {
         grid-template-columns: repeat(2, 1fr);
     }
 }
