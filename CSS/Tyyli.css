@@ -104,6 +104,9 @@ main {
     justify-items: center;
 }
 
+
+/* HERO osa alkaa*/
+
 .hero {
     grid-column: 1 / -1;
     width: 100%;
@@ -148,6 +151,8 @@ main {
     font-family: 'Inter', sans-serif;
     font-size: 1.4rem;
 }
+
+/* HERO osa päättyy*/
 
 .sisalto_kehys {
     grid-column: 2;
@@ -248,6 +253,54 @@ main {
     font-family: "Inter", sans-serif;
     line-height: 1.8rem;
 }
+
+/* Mainos osa päättyy*/
+.mainos{
+    padding: 20px;
+}
+.mainos_kehys{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 24px;
+    border: 2px solid var(--asiakas-violetti);
+}
+
+.mainos_kuva{
+    height: 50%;
+    width: 50%;
+    border-radius: 24px;
+}
+
+.mainos_tekstit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.mainos_tekstit h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: "Story Script", sans-serif;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+
+}
+.mainos_tekstit p{
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 50%; 
+    min-width: 250px;
+    font-family: "Inter", sans-serif;
+    line-height: 1.8rem;
+
+}
+.mainos_tekstit button{
+    margin-top: auto;
+}
+/* Mainos osa päättyy*/
 
 /* Galleria alkaa */
 
