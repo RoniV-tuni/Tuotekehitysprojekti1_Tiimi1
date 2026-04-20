@@ -113,7 +113,7 @@ main {
     display: flex;
     align-items: stretch;
     justify-content: center;
-    background-color: white;
+    background-color: #FDF2F0;
     margin-top: 2rem;
     margin-bottom: 2rem;
     min-height: 30rem;
@@ -136,13 +136,14 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    margin-right: 1.5rem;
     width: 60%;
 }
 
 .h1_hero {
     font-family: "Story Script", sans-serif;
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: 2.8rem;
     color: #D4B9F0;
 }
@@ -150,13 +151,14 @@ main {
 .p_hero {
     font-family: 'Inter', sans-serif;
     font-size: 1.4rem;
+    text-align: center;
 }
 
 /* HERO osa päättyy*/
 
 .sisalto_kehys {
     grid-column: 2;
-    padding: 2rem 1.3rem;
+    padding: 2rem 2rem;
 }
 
 .ristikko {
@@ -171,6 +173,8 @@ main {
     position: relative;
     overflow: hidden;
     height: 300px;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
 }
 
 .ristikko_kuva img {
@@ -192,10 +196,23 @@ main {
     height: auto;
     min-height: 200px;
     margin-bottom: 3rem;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
 }
 
 .ristikko_teksti:last-child {
     margin-bottom: 0;
+}
+
+.h2_ristikko {
+    font-family: "Story Script", sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.p_ristikko {
+    font-family: "Inter", sans-serif;
+    line-height: 1.8rem;
 }
 
 .luelisaa_nappi {
@@ -216,7 +233,6 @@ main {
     transition: color 0.4s ease;
     z-index: 1;
     margin-top: 30px;
-    margin-left: 10px;
     max-width: 100%;     
     text-align: center;    
     box-sizing: border-box;
@@ -241,17 +257,6 @@ main {
 
 .luelisaa_nappi:hover::before {
     left: 0;
-}
-
-.h2_ristikko {
-    font-family: "Story Script", sans-serif;
-    font-size: 3.2rem;
-    text-align: center;
-}
-
-.p_ristikko {
-    font-family: "Inter", sans-serif;
-    line-height: 1.8rem;
 }
 
 /* Mainos osa päättyy*/
@@ -466,11 +471,13 @@ footer {
 
     .ristikko_kuva {
         height: auto;
+        border-radius: 0.8rem;
     }
 
     .ristikko_teksti {
         height: 100%;
         margin-bottom: 0;
+        border-radius: 0.8rem;
     }
 
     .ristikko div:nth-child(1) { order: 2; } 
@@ -495,6 +502,10 @@ footer {
 
     .ristikko {
         grid-auto-rows: minmax(600px, auto);
+    }
+
+    .ristikko_teksti {
+        padding: 3rem;
     }
 
     .galleria_kortit {
