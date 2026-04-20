@@ -261,7 +261,7 @@ main {
 
 /* Mainos osa päättyy*/
 .mainos{
-    padding: 20px;
+    padding-top: 20px;
 }
 .mainos_kehys{
     display: flex;
@@ -442,136 +442,6 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-/* FOOTERI */
-footer {
-    grid-area: footer;
-    width: 100%;
-    background-color: #fff;
-    padding: 60px 20px 20px;
-    border-top: 1px solid #0000003b;
-    margin-top: 2rem;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 2rem;
-    text-align: center;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-section h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-}
-
-.social-links a {
-    margin: 0 15px;
-    font-size: 1.5rem;
-    color: var(--tekstivari);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--asiakas-pinkki); 
-    transform: translateY(-3px);  
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    font-size: 0.8rem;
-    opacity: 0.7;
-}   
-/* FOOTERI PÄÄTTYY */
-
-
-@media (min-width: 750px) {
-
-    main {
-        grid-template-columns: 1fr min(80rem, 100%) 1fr;
-    }
-
-    .ristikko {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: minmax(500px, auto);
-        gap: 2rem;
-    }
-
-    .ristikko_kuva {
-        height: auto;
-        border-radius: 0.8rem;
-    }
-
-    .ristikko_teksti {
-        height: 100%;
-        margin-bottom: 0;
-        border-radius: 0.8rem;
-    }
-
-    .ristikko div:nth-child(1) { order: 2; } 
-    .ristikko div:nth-child(2) { order: 1; }
-
-    .ristikko div:nth-child(3) { order: 3; } 
-    .ristikko div:nth-child(4) { order: 4; }
-
-    .ristikko div:nth-child(5) { order: 6; }
-    .ristikko div:nth-child(6) { order: 5; }
-
-    .galleria_kortit {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .verkkokauppa_kortit {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tyhjaa {
-        width: 300px
-    }
-}
-
-@media (min-width: 1150px) {
-
-    .ristikko {
-        grid-auto-rows: minmax(600px, auto);
-    }
-
-    .ristikko_teksti {
-        padding: 3rem;
-    }
-
-    .galleria_kortit {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1500px) {
-
-    .hero {
-        width: 90%;
-        border-radius: 0.8rem;
-    }
-
-    .hero_kuva img {
-        border-radius: 0.8rem;
-    }
-}
-
-
 /* ajanvaraussivu alkaa */
 
 .hero-booking, .saannot-osio, .hinnasto-wrapper {
@@ -731,3 +601,149 @@ footer {
 }
 
 /* ajanvaraussivu päättyy */
+
+/* FOOTERI */
+footer {
+    grid-area: footer;
+    width: 100%;
+    background-color: #fff;
+    padding: 60px 20px 20px;
+    border-top: 1px solid #0000003b;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.social-links a {
+    margin: 0 15px;
+    font-size: 1.5rem;
+    color: var(--tekstivari);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--asiakas-pinkki); 
+    transform: translateY(-3px);  
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}   
+/* FOOTERI PÄÄTTYY */
+
+
+@media (min-width: 750px) {
+
+    main {
+        grid-template-columns: 1fr min(80rem, 100%) 1fr;
+    }
+
+    .ristikko {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(500px, auto);
+        gap: 2rem;
+    }
+
+    .ristikko_kuva {
+        height: auto;
+        border-radius: 0.8rem;
+    }
+
+    .ristikko_teksti {
+        height: 100%;
+        margin-bottom: 0;
+        border-radius: 0.8rem;
+    }
+
+    .ristikko div:nth-child(1) { order: 2; } 
+    .ristikko div:nth-child(2) { order: 1; }
+
+    .ristikko div:nth-child(3) { order: 3; } 
+    .ristikko div:nth-child(4) { order: 4; }
+
+    .ristikko div:nth-child(5) { order: 6; }
+    .ristikko div:nth-child(6) { order: 5; }
+
+    .galleria_kortit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .verkkokauppa_kortit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tyhjaa {
+        width: 300px
+    }
+}
+
+@media (max-width: 768px) {
+    .mainos_kehys {
+        flex-direction: column; /* Asettaa kuvan ja tekstit päällekkäin */
+        gap: 20px;              /* Hieman pienempi väli mobiilissa näyttää usein paremmalta */
+        padding: 20px;          /* Pienemmät sisämarginaalit, jotta tila ei lopu kesken */
+    }
+
+    .mainos_kuva {
+        width: 100%;            /* Kuva täyttää koko kehyksen leveyden */
+        height: auto;           /* Pitää kuvan mittasuhteet oikeina */
+    }
+
+    .mainos_tekstit p {
+        width: 100%;            /* Antaa tekstin viedä koko käytettävissä olevan leveyden */
+    }
+}
+
+@media (min-width: 1150px) {
+
+    .ristikko {
+        grid-auto-rows: minmax(600px, auto);
+    }
+
+    .ristikko_teksti {
+        padding: 3rem;
+    }
+
+    .galleria_kortit {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .hero {
+        width: 90%;
+        border-radius: 0.8rem;
+    }
+
+    .hero_kuva img {
+        border-radius: 0.8rem;
+    }
+}
