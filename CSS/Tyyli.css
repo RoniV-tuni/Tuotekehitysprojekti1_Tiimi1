@@ -399,6 +399,48 @@ main {
 }
 /* Verkkokauppa päättyy */
 
+.kysymysrivi {
+    display: flex;
+}
+
+.kysymys {
+    display: flex;
+    flex-direction: column;
+    color: rgb(38, 40, 41);
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    max-width: 700px;
+}
+
+.tyhjaa {
+    display: flex;
+    flex-direction: column;
+    color: rgb(38, 40, 41);
+    padding: 1.5rem;
+    background-color: transparent;
+    border-radius: 0.8rem;
+    width: 0px
+}
+
+.vastaus {
+    margin-top: 0.7rem;
+}
+
+.h2_kysymys {
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    color: rgba(38, 40, 41, 0.925);
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
 
 /* FOOTERI */
 footer {
@@ -495,6 +537,10 @@ footer {
 
     .verkkokauppa_kortit {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tyhjaa {
+        width: 300px
     }
 }
 
